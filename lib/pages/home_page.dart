@@ -3,7 +3,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/catlog.dart';
+import 'package:flutter_application_1/pages/item_widget.dart';
 import 'package:flutter_application_1/widgets/drawer.dart';
+import 'package:flutter_application_1/models/catlog.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -15,10 +18,13 @@ class HomePage extends StatelessWidget {
           style: TextStyle(color: Colors.black),
         ),
       ),
-      body: Center(
-        child: Container(
-          child: Text("Welcome To PikkC"),
-        ),
+      body: ListView.builder(
+        itemCount: CatlogueModel.items.length,
+        itemBuilder: (context, index) {
+          return ItemWidget(
+            item: CatlogueModel.items[index],
+          );
+        },
       ),
       drawer: MyDrawer(),
     );
