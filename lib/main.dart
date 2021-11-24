@@ -1,8 +1,9 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, deprecated_member_use
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/login_page.dart';
 import 'package:flutter_application_1/utils/routes.dart';
+import 'package:flutter_application_1/widgets/themes.dart';
 
 import 'pages/home_page.dart';
 
@@ -17,8 +18,9 @@ class myApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       themeMode: ThemeMode.light,
-      theme: ThemeData(primarySwatch: Colors.deepPurple),
-      //zdebugShowCheckedModeBanner: false,
+      theme: MyTheme.lightTheme(context),
+      debugShowCheckedModeBanner: false,
+      initialRoute: Myroutes.homeRoute, //remove this later
       routes: {
         "/": (context) => LoginPage(),
         Myroutes.homeRoute: (context) => HomePage(),
