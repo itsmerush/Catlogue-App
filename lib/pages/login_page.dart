@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -59,6 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   children: [
                     TextFormField(
+                      // ignore: prefer_const_constructors
                       decoration: InputDecoration(
                         hintText: "Enter User name",
                         labelText: "User Name",
