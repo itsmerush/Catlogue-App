@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/checkout.dart';
 import 'package:flutter_application_1/pages/login_page.dart';
 import 'package:flutter_application_1/utils/routes.dart';
 import 'package:flutter_application_1/widgets/themes.dart';
@@ -25,6 +26,7 @@ class myApp extends StatelessWidget {
         "/": (context) => LoginPage(),
         Myroutes.homeRoute: (context) => HomePage(),
         Myroutes.loginRoute: (context) => LoginPage(),
+        Myroutes.catlogRoute: (context) => CheckoutPage(),
       },
     );
   }
