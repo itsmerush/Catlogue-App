@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 import 'package:flutter_application_1/pages/catlog.dart';
-import 'package:flutter_application_1/pages/item_widget.dart';
+import 'package:flutter_application_1/widgets/item_widget.dart';
 import 'package:flutter_application_1/utils/routes.dart';
 import 'package:flutter_application_1/widgets/drawer.dart';
 import 'package:flutter_application_1/pages/catlog.dart';
@@ -53,8 +53,8 @@ class _HomePageState extends State<HomePage> {
                 itemCount: CatlogueModel.items.length,
                 itemBuilder: (context, index) {
                   return ItemWidget(
-                    //item: CatlogueModel.items[index],
-                    item: CatlogueModel.getByPosition(index),
+                    item: CatlogueModel.items[index],
+                    //item: CatlogueModel.getByPosition(index),
                   );
                 },
               )

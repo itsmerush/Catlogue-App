@@ -1,6 +1,11 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables
+
+import 'dart:io';
+import 'dart:ui';
+import 'dart:core';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/cart.dart';
 
 class CheckoutPage extends StatelessWidget {
   @override
@@ -8,12 +13,67 @@ class CheckoutPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Catlogue App",
+          "MyCart",
           style: TextStyle(color: Colors.black),
         ),
       ),
-      body: Center(
-        child: Text("This is checkout page"),
+      body: Column(
+        children: <Widget>[
+          Flexible(child: _cartList()),
+          Divider(),
+          _cartTotal(),
+        ],
+      ),
+    );
+  }
+}
+
+class _cartTotal extends StatelessWidget {
+  final _cart = CartModel();
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 200,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Text(
+            "\$${_cart.totalPrice}",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 25,
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text("Your order has been Placed"),
+              ));
+            },
+            child: Text("CheckOut"),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+// ignore: camel_case_types
+class _cartList extends StatefulWidget {
+  @override
+  __cartListState createState() => __cartListState();
+}
+
+class __cartListState extends State<_cartList> {
+  final _cart = CartModel();
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: _cart.items.length,
+      itemBuilder: (context, index) => ListTile(
+        leading: Icon(Icons.done),
+        trailing: IconButton(onPressed: () {}, icon: Icon(Icons.remove)),
+        title: Text(_cart.items[index].name),
       ),
     );
   }
