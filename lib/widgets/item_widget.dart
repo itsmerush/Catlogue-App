@@ -35,30 +35,49 @@ class ItemWidget extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            ElevatedButton(
-              child: Text(
-                "Buy",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
-                ),
-              ),
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(20, 23),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)),
-                padding: EdgeInsets.only(
-                  left: 8,
-                  right: 11,
-                  top: 3,
-                  bottom: 3,
-                ),
-              ),
-              onPressed: () {
-                print("by");
-              },
-            ),
+            _AddToCart()
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class _AddToCart extends StatefulWidget {
+  const _AddToCart({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<_AddToCart> createState() => _AddToCartState();
+}
+
+class _AddToCartState extends State<_AddToCart> {
+  bool isAdded = false;
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        isAdded = true;
+        setState(() {});
+      },
+      child: isAdded
+          ? Icon(Icons.done)
+          : Text(
+              "Buy",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 15,
+              ),
+            ),
+      style: ElevatedButton.styleFrom(
+        minimumSize: Size(20, 23),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        padding: EdgeInsets.only(
+          left: 8,
+          right: 11,
+          top: 3,
+          bottom: 3,
         ),
       ),
     );
