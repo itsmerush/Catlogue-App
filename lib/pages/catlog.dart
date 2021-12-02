@@ -2,6 +2,12 @@ import 'dart:convert';
 import 'dart:core';
 
 class CatlogueModel {
+  static final catModel = CatlogueModel._internal();
+
+  CatlogueModel._internal();
+
+  factory CatlogueModel() => catModel;
+
   static List<Item> items = [
     Item(
       id: 1,

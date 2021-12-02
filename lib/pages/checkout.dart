@@ -29,9 +29,9 @@ class CheckoutPage extends StatelessWidget {
 }
 
 class _cartTotal extends StatelessWidget {
-  final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
+    final _cart = CartModel();
     return SizedBox(
       height: 200,
       child: Row(

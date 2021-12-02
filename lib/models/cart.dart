@@ -1,9 +1,15 @@
 // ignore_for_file: unused_field
 import 'dart:core';
-
+import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/catlog.dart';
 
 class CartModel {
+  static final cartModel = CartModel._internal();
+
+  CartModel._internal();
+
+  factory CartModel() => cartModel;
+
   late CatlogueModel _catlog;
 
   final List<int> _itemIds = [];

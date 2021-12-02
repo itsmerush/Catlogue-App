@@ -3,6 +3,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/cart.dart';
 import 'package:flutter_application_1/pages/catlog.dart';
 
 class ItemWidget extends StatelessWidget {
@@ -35,7 +36,7 @@ class ItemWidget extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            _AddToCart()
+            _AddToCart(catlog: item)
           ],
         ),
       ),
@@ -44,8 +45,10 @@ class ItemWidget extends StatelessWidget {
 }
 
 class _AddToCart extends StatefulWidget {
+  final Item catlog;
   const _AddToCart({
     Key? key,
+    required this.catlog,
   }) : super(key: key);
 
   @override
@@ -59,6 +62,11 @@ class _AddToCartState extends State<_AddToCart> {
     return ElevatedButton(
       onPressed: () {
         isAdded = true;
+        final _catlog = CatlogueModel();
+        final _cart = CartModel();
+        _cart.catlog = _catlog;
+        _cart.add(widget.catlog);
+
         setState(() {});
       },
       child: isAdded
