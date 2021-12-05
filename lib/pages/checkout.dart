@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, camel_case_types, duplicate_ignore
 
 import 'dart:io';
 import 'dart:ui';
@@ -68,13 +68,15 @@ class __cartListState extends State<_cartList> {
   final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: _cart.items.length,
-      itemBuilder: (context, index) => ListTile(
-        leading: Icon(Icons.done),
-        trailing: IconButton(onPressed: () {}, icon: Icon(Icons.remove)),
-        title: Text(_cart.items[index].name),
-      ),
-    );
+    return _cart.items.isEmpty
+        ? Text("Nothing to show")
+        : ListView.builder(
+            itemCount: _cart.items.length,
+            itemBuilder: (context, index) => ListTile(
+              leading: Icon(Icons.done),
+              trailing: IconButton(onPressed: () {}, icon: Icon(Icons.remove)),
+              title: Text(_cart.items[index].name),
+            ),
+          );
   }
 }

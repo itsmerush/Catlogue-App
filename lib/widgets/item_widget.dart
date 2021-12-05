@@ -56,20 +56,21 @@ class _AddToCart extends StatefulWidget {
 }
 
 class _AddToCartState extends State<_AddToCart> {
-  bool isAdded = false;
+  final _cart = CartModel();
+  bool isInCart = false;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        isAdded = true;
+        isInCart = true;
         final _catlog = CatlogueModel();
-        final _cart = CartModel();
+
         _cart.catlog = _catlog;
         _cart.add(widget.catlog);
 
         setState(() {});
       },
-      child: isAdded
+      child: isInCart
           ? Icon(Icons.done)
           : Text(
               "Buy",

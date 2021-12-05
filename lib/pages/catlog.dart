@@ -8,17 +8,8 @@ class CatlogueModel {
 
   factory CatlogueModel() => catModel;
 
-  static List<Item> items = [
-    Item(
-      id: 1,
-      name: "iphone12",
-      desc: "good",
-      price: 67000,
-      color: "red",
-      image:
-          "https://images.pexels.com/photos/5053841/pexels-photo-5053841.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    )
-  ];
+  static List<Item> items = [];
+
   Item getById(int id) =>
       items.firstWhere((element) => element.id == id, orElse: null);
   Item getByPosition(int pos) => items[pos];

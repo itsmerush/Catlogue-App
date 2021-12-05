@@ -63,6 +63,46 @@
       "price": 67000,
       "color": "red",
       "image": "https://images.pexels.com/photos/5053841/pexels-photo-5053841.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+    },
+    {
+      "id": 1,
+      "name": "iphone12",
+      "desc": "good",
+      "price": 67000,
+      "color": "red",
+      "image": "https://images.pexels.com/photos/5053841/pexels-photo-5053841.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+    },
+    {
+      "id": 1,
+      "name": "iphone12",
+      "desc": "good",
+      "price": 67000,
+      "color": "red",
+      "image": "https://images.pexels.com/photos/5053841/pexels-photo-5053841.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+    },
+    {
+      "id": 1,
+      "name": "iphone12",
+      "desc": "good",
+      "price": 67000,
+      "color": "red",
+      "image": "https://images.pexels.com/photos/5053841/pexels-photo-5053841.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+    },
+    {
+      "id": 1,
+      "name": "iphone12",
+      "desc": "good",
+      "price": 67000,
+      "color": "red",
+      "image": "https://images.pexels.com/photos/5053841/pexels-photo-5053841.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+    },
+    {
+      "id": 1,
+      "name": "iphone12",
+      "desc": "good",
+      "price": 67000,
+      "color": "red",
+      "image": "https://images.pexels.com/photos/5053841/pexels-photo-5053841.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
     }
   ]
 }
